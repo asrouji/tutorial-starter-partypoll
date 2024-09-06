@@ -28,6 +28,13 @@ export default function Home() {
     };
 
     // 🎈 TODO: send a POST request to a PartyKit room
+    await fetch(`${PARTYKIT_URL}/party/${id}`, {
+      method: "POST",
+      body: JSON.stringify(poll),
+      headers: {
+        "Content-Type": "application/json",
+      },
+    });
 
     redirect(`/${id}`);
   }
